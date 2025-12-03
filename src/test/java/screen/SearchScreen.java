@@ -12,9 +12,10 @@ import static io.appium.java_client.AppiumBy.id;
 public class SearchScreen {
     SelenideElement
             inputSearch = $(accessibilityId("Search Wikipedia")),
-            inputForSearchText = $(id("org.wikipedia.alpha:id/search_src_text"));
+            inputForSearchText = $(id("org.wikipedia.alpha:id/search_src_text")),
+            titleInTheArticle = $(id("Text"));
     ElementsCollection
-            titleText = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
+            resultSearch = $$(id("org.wikipedia.alpha:id/page_list_item_title"));
 
     public void clickInputSearch() {
         inputSearch.click();
@@ -29,6 +30,16 @@ public class SearchScreen {
     }
 
     public void checkResultSearchText() {
-        titleText.shouldHave(sizeGreaterThan(0));
+        resultSearch.shouldHave(sizeGreaterThan(0));
     }
+
+    public void clickFirstArticle() {
+        resultSearch.get(0).click();
+    }
+
+    public void openPageArticle() {
+        titleInTheArticle.shouldHave();
+    }
+
+
 }
