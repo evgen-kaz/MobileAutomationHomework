@@ -41,6 +41,6 @@ public class TestBase {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         closeWebDriver();
-        Attach.addVideo("Видео всего теста", sessionId);
+        Attach.addVideo(sessionId);
     }
 }
