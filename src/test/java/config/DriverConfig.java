@@ -2,18 +2,16 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-//@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:${env}.properties",
+        "classpath:${device}.properties",
 })
 public interface DriverConfig extends Config {
 
     @Key("browserstack.user")
-    @DefaultValue("evgentest_URiWlJ")
     String browserstackUser();
 
     @Key("browserstack.key")
-    @DefaultValue("FWgmx1HCZaHKgxYwNsnj")
     String browserstackKey();
 
     @Key("platformName")

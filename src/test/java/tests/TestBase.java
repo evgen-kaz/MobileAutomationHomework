@@ -17,11 +17,6 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        String os = System.getProperty("os");
-        if (os == null) {
-            System.setProperty("os", "android");
-        }
-
         Configuration.browser = BrowserstackDriver.class.getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
@@ -38,7 +33,7 @@ public class TestBase {
         String sessionId = Selenide.sessionId().toString();
         System.out.println(sessionId);
 
-        Attach.screenshotAs("Last screenshot");
+        //Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         closeWebDriver();
         Attach.addVideo(sessionId);

@@ -40,6 +40,4 @@ public class SearchScreen {
     public void openPageArticle() {
         titleInTheArticle.shouldHave();
     }
-
-
 }
