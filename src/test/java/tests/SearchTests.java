@@ -13,19 +13,11 @@ public class SearchTests extends TestBase {
     @Tag("Позитивный")
     @DisplayName("Поиску по слову 'Test'")
     void successfulSearchTest() {
-        step("Ввод слова 'Test' в поисковую строку", () -> {
             searchScreen.clickInputSearch();
             searchScreen.inputTextInSearchInput("Testing");
-        });
-
-        step("Проверка наличия искомого текста в результатах поиска", () -> {
             searchScreen.searchInputByText();
             searchScreen.checkResultSearchText();
-        });
-
-        step("Открытие первой статьи", () -> {
             searchScreen.clickFirstArticle();
             searchScreen.openPageArticle();
-        });
     }
 }
